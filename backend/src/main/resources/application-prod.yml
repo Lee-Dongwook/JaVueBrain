@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://<HOST>:<PORT>/<DB>
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USER}
+    password: ${DB_PASS}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate.format_sql: true
+      hibernate.jdbc.time_zone: UTC
+server:
+  port: 8080
