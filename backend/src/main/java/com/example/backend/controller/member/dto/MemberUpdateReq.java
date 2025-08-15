@@ -1,4 +1,4 @@
-package com.example.backend.web.member.dto;
+package com.example.backend.controller.member.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

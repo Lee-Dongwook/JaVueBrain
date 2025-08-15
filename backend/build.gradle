@@ -20,6 +20,8 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter' 
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-batch'
     implementation 'org.springframework.boot:spring-boot-starter-websocket'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
@@ -39,7 +41,7 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok:1.18.34'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.34'
     runtimeOnly 'com.h2database:h2'
-    // runtimeOnly 'org.postgresql:postgresql' // 운영 DB (배포 시)
+    runtimeOnly 'org.postgresql:postgresql'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

@@ -1,7 +1,7 @@
-package com.example.backend.web.member;
+package com.example.backend.controller.member;
 
+import com.example.backend.controller.member.dto.MemberRes;
 import com.example.backend.domain.member.Member;
-import com.example.backend.web.member.dto.MemberRes;
 
 public class MemberMapper {
     public static MemberRes toRes(Member m) {

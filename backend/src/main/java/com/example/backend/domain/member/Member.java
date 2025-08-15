@@ -64,4 +64,24 @@ public class Member {
       if (uuid == null)
           uuid = UUID.randomUUID();
   }
+
+  public Long getId() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'getId'");
+  }
+
+  public String getName() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'getName'");
+  }
+
+  public String getEmail() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'getEmail'");
+  }
+
+  public OffsetDateTime getCreatedAt() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'getCreatedAt'");
+  }
 }

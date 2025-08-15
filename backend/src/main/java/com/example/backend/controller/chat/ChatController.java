@@ -1,6 +1,6 @@
-package com.example.backend.web.chat;
+package com.example.backend.controller.chat;
 
-import com.example.backend.web.chat.dto.ChatMessage;
+import com.example.backend.domain.chat.ChatMessage;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;

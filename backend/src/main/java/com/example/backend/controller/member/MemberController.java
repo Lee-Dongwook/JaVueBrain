@@ -1,10 +1,11 @@
-package com.example.backend.web.member;
+package com.example.backend.controller.member;
 
+import com.example.backend.controller.member.dto.MemberCreateReq;
+import com.example.backend.controller.member.dto.MemberRes;
+import com.example.backend.controller.member.dto.MemberUpdateReq;
 import com.example.backend.domain.member.Member;
 import com.example.backend.service.MemberService;
-import com.example.backend.web.member.dto.MemberCreateReq;
-import com.example.backend.web.member.dto.MemberRes;
-import com.example.backend.web.member.dto.MemberUpdateReq;
+
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

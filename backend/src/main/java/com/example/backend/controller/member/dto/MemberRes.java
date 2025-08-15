@@ -1,4 +1,4 @@
-package com.example.backend.web.member.dto;
+package com.example.backend.controller.member.dto;
 
 import java.time.OffsetDateTime;
 
