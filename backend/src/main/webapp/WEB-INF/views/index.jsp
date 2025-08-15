@@ -8,5 +8,12 @@
 
   <h3>Principal</h3>
   <pre>${pageContext.request.userPrincipal}</pre>
+
+  <h1>Real-time Chat</h1>
+  <form action="/room" method="get">
+    <input type="text" name="id" placeholder="room id" required />
+    <input type="text" name="name" placeholder="your name"/>
+    <button type="submit">Enter</button>
+  </form>
 </body>
 </html>
