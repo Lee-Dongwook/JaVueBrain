@@ -28,6 +28,10 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa' 
     implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+    // Elasticsearch Java High Level REST Client (Spring Data 4.x 용)
+    implementation 'org.elasticsearch.client:elasticsearch-rest-high-level-client:7.17.24'
+     // Elasticsearch core (QueryBuilders, HighlightBuilder 제공)
+    implementation 'org.elasticsearch:elasticsearch:7.17.24'
     implementation 'org.flywaydb:flyway-core'
     implementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
     // 필요 시: implementation 'org.flywaydb:flyway-database-postgresql'

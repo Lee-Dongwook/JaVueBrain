@@ -6,14 +6,12 @@ import org.springframework.data.domain.*;
 import org.springframework.data.elasticsearch.client.elc.NativeQuery;
 import org.springframework.data.elasticsearch.client.elc.NativeQueryBuilder;
 import org.springframework.data.elasticsearch.core.query.HighlightQuery;
-import org.springframework.data.elasticsearch.client.elc.QueryBuilders;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.data.elasticsearch.core.SearchHit;
 import org.springframework.data.elasticsearch.core.SearchHits;
-import org.springframework.data.elasticsearch.core.document.DocumentAdapters;
-import org.springframework.data.elasticsearch.core.query.HighlightBuilder;
 import org.springframework.stereotype.Service;
-import org.springframework.data.elasticsearch.search.opearator.Operartor.AND;
+import co.elastic.clients.elasticsearch._types.query_dsl.QueryBuilders;
+import co.elastic.clients.elasticsearch._types.query_dsl.Operator;
 
 import java.time.Instant;
 import java.util.List;
@@ -53,7 +51,7 @@ public class ChatSearchService {
                             .fields("content", "sender")
                             .query(keyword)
                             .fuzziness("AUTO")
-                            .operator(AND));
+                            .operator(Operator.And));
         } else {
             bool.must(QueryBuilders.matchAll());
         }
