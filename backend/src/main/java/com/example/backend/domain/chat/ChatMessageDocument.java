@@ -1,16 +1,26 @@
 package com.example.backend.domain.chat;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.*;
 import java.time.Instant;
 
 @Document(indexName = "chat-messages")
+@Setting(settingPath = "/elasticsearch/chat-message-settings.json")
+@Mapping(mappingPath = "/elasticsearch/chat-message-mappings.json")
 public class ChatMessageDocument {
     @Id
     private String id;
+
+    @Field(type = FieldType.Keyword)
     private String roomId;
+
+    @Field(type = FieldType.Text, analyzer = "nori_analyzer", searchAnalyzer = "nori_analyzer")
     private String sender;
+    
+    @Field(type = FieldType.Text, analyzer = "nori_analyzer", searchAnalyzer = "nori_analyzer")
     private String content;
+    
+    @Field(type = FieldType.Date)
     private Instant createdAt;
 
     public ChatMessageDocument() {}

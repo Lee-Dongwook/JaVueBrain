@@ -1,0 +1,17 @@
+{
+  "properties": {
+    "id": { "type": "keyword" },
+    "roomId": { "type": "keyword" },
+    "sender": {
+      "type": "text",
+      "analyzer": "nori_analyzer",
+      "fields": { "keyword": { "type": "keyword", "ignore_above": 256 } }
+    },
+    "content": {
+      "type": "text",
+      "analyzer": "nori_analyzer",
+      "fields": { "keyword": { "type": "keyword", "ignore_above": 256 } }
+    },
+    "createdAt": { "type": "date" }
+  }
+}
