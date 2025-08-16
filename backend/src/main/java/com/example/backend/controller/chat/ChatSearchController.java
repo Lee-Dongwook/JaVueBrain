@@ -8,7 +8,7 @@ import java.time.Instant;
 
 
 @RestController
-@RequestMapping("/search")
+@RequestMapping("/api/search")
 @RequiredArgsConstructor
 public class ChatSearchController {
     private final ChatSearchService service;
