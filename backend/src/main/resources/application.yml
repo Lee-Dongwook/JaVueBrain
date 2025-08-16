@@ -7,12 +7,18 @@ spring:
     url: jdbc:postgresql://localhost:5432/app
     username: app
     password: app
+  timescale-datasource:
+    url: jdbc:postgresql://localhost:5432/timescale_db
+    username: timescale_user
+    password: secret
   jpa:
     hibernate:
       ddl-auto: update
     properties:
-      hibernate.format_sql: true
-      hibernate.jdbc.time_zone: UTC
+      hibernate:
+        format_sql: true
+        jdbc.time_zone: UTC
+        dialect: org.hibernate.dialect.PostgreSQLDialect
   security:
     oauth2:
       client:
