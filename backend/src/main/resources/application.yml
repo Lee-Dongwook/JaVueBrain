@@ -1,4 +1,18 @@
 spring:
+  elasticsearch:
+    uris: http://localhost:9200
+    username: elastic
+    password: changeme
+  datasource:
+    url: jdbc:postgresql://localhost:5432/app
+    username: app
+    password: app
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.format_sql: true
+      hibernate.jdbc.time_zone: UTC
   security:
     oauth2:
       client:

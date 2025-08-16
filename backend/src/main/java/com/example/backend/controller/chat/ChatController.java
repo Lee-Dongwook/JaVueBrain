@@ -1,6 +1,7 @@
 package com.example.backend.controller.chat;
 
 import com.example.backend.domain.chat.ChatMessage;
+import com.example.backend.service.ChatMessageService;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
@@ -8,14 +9,17 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class ChatController {
     private final SimpMessagingTemplate messagingTemplate;
-    
-    public ChatController(SimpMessagingTemplate messagingTemplate) {
+    private final ChatMessageService chatService;
+
+    public ChatController(SimpMessagingTemplate messagingTemplate, ChatMessageService chatService) {
         this.messagingTemplate = messagingTemplate;
+        this.chatService = chatService;
+
     }
 
     @MessageMapping("/chat.send")
-    public void send(ChatMessage msg) {
-        String destination = "/topic/rooms/" + msg.getRoomId();
-        messagingTemplate.convertAndSend(destination, msg);
+    public void send(ChatMessagePayload msg) {
+        chatService.saveToDbAndIndex(msg.getRoomId(), msg.getSender(), msg.getContent());
+        messagingTemplate.convertAndSend("/topic/rooms/" + msg.getRoomId(), msg);
     }
 }
